@@ -3,7 +3,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebase/config';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
-import ServerSources from './pages/ServerSources';
+import Servers from './pages/Servers';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -62,11 +62,12 @@ function App() {
             fontWeight: 'bold'
           }}
         >
-          Источники серверов
+          Серверы
         </button>
       </div>
       
-      {currentPage === 'keys' ? <Dashboard /> : <ServerSources />}
+      {currentPage === 'keys' && <Dashboard />}
+      {currentPage === 'servers' && <Servers />}
     </div>
   );
 }
